@@ -15,7 +15,7 @@ param(
 	[string]$deployUserName,
 	
 	[Parameter(Mandatory=$true)]
-	[string]$deployUserPassword
+	[string]$deployUserPassword,
 	
 	[Parameter(Mandatory=$true)]
 	[switch]$deploySkipExtraFilesOnServer
