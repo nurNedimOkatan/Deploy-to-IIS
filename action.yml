@@ -1,4 +1,4 @@
-name: 'IIS Deploy'
+name: 'Deploy to IIS'
 description: 'Allows to deploy a website on IIS'
 inputs:
   website-name:
