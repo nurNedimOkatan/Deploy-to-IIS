@@ -1,4 +1,4 @@
-# IIS Deploy action
+# Deploy to IIS action
 
 This action allows to deploy a website on IIS.
 
@@ -6,7 +6,6 @@ This action is based on Microsoft scripts bundled with some versions of Visual S
 
 The MS Deploy configuration uses these default settings:
 - `WebPublishMethod` = `MSDeploy`
-- `SkipExtraFilesOnServer` = `false`
 - `EnableMSDeployAppOffline` = `true`
 
 Also, some generic directories and files are excluded to prevent data loose:
@@ -41,6 +40,7 @@ It is recommended to put the `msdeploy-username` and `msdeploy-password` into a 
 | `msdeploy-service-url`  | Yes | `https://yourwebsite.ca:8172` | | MS Deploy Service URL |
 | `msdeploy-username`     | Yes | `username`        | | Username used by Basic authentication to the MS Deploy Service |
 | `msdeploy-password`     | Yes | `password`        | | Password used by Basic authentication to the MS Deploy Service |
+| `msdeploy-skipextrafilesonserver`     | Yes | `true`        | | SkipExtraFilesOnServer parameter for MS Deploy Service |
 | `source-path`           | Yes | `${{ github.workspace }}\website\publish`  | | The path to the source directory that will be deployed |
 
 ## Usage
@@ -53,9 +53,12 @@ It is recommended to put the `msdeploy-username` and `msdeploy-password` into a 
     msdeploy-service-url: ${{ secrets.MSDEPLOY_URL }}
     msdeploy-username: ${{ secrets.MSDEPLOY_USERNAME }}
     msdeploy-password: ${{ secrets.MSDEPLOY_PASSWORD }}
+    msdeploy-skipextrafilesonserver: true
     source-path: ${{ github.workspace }}\website\publish
 ```
 <!-- end usage -->
+
+## Forked from https://github.com/ChristopheLav/iis-deploy
 
 ## License
 
