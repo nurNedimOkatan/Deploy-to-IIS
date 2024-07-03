@@ -13,6 +13,9 @@ inputs:
   msdeploy-password:
     description: "Password used by Basic authentication to the MS Deploy Service"
     required: true
+  msdeploy-skipextrafilesonserver:
+    description: "SkipExtraFilesOnServer parameter for MS Deploy Service"
+    required: true
   source-path:
     description: "The path to the source directory that will be deployed"
     required: true
@@ -28,6 +31,7 @@ runs:
         ${{ inputs.website-name }}
         ${{ inputs.msdeploy-username }}
         ${{ inputs.msdeploy-password }}
+        ${{ inputs.msdeploy-skipextrafilesonserver }}
 branding:
   icon: upload-cloud
   color: purple
