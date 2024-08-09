@@ -18,7 +18,7 @@ param(
 	[string]$deployUserPassword,
 	
 	[Parameter(Mandatory=$true)]
-	[switch]$deploySkipExtraFilesOnServer
+	[string]$deploySkipExtraFilesOnServer
 )
 
 Write-Host "Deployment starting..."
